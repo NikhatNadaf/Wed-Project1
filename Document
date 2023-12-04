@@ -1,0 +1,39 @@
+Project:
+when button is clicked background color is changed.(randomly)
+HTML:
+
+<body>
+    <button>Click</button>
+
+    <script src="script.js"></script>
+</body>
+
+CSS:
+button{
+    background-color: #555555;
+    color: #ffff;
+    padding: 15px 32px;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 40vh 90vh;  //toplace button in center
+    
+}
+margin: 40vh 90vh; ---->  toplace button in center
+vh ---> viweport height
+
+JS:
+const btn=document.querySelector("button"); ---> to select button
+const body=document.querySelector("body"); ---> to select body
+const color=['yellow' , 'pink' , 'blue' , 'red' , 'white' , 'black' , 'green' , 'orange' , 'violet' , 'purple'];
+
+body.style.backgroundColor="aqua"; ---> set background color (default)
+btn.addEventListener("click",changeColor); ---> to performsome action 
+
+function changeColor()
+{
+    let i=parseInt(Math.random()*color.length);
+    body.style.backgroundColor=color[i];
+
+}
+
+Math.random() ---> to take random values 
